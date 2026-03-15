@@ -1,0 +1,149 @@
+<!--
+Project Title: Personal Portfolio Website
+Name: Ananya Sharma
+Date: 21 January 2026
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header id="header">
+        <nav class="navbar">
+            <h1 class="logo">Ananya Sharma</h1>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero">
+            <h2 id="welcomeText">Hello, I'm Ananya 👋</h2>
+            <p>Creative Student | Web Development Enthusiast</p>
+            <a href="#projects" class="btn" id="viewWorkBtn">View My Work</a>
+        </div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>
+            Hello! My name is Ananya Sharma, and I am a passionate and motivated student
+            with a strong interest in web development and emerging technologies.
+            I enjoy designing clean, user-friendly websites and turning ideas into
+            functional digital solutions. I have hands-on experience in building
+            projects using HTML and CSS, and I am continuously improving my skills
+            in modern web technologies.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Basic JavaScript</li>
+            <li>SQL & DBMS Basics</li>
+            <li>Problem Solving</li>
+            <li>Communication Skills</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>Instock – Inventory Management Website</h3>
+            <p>
+                A responsive inventory management website developed using HTML and CSS.
+                This project helps in organizing and displaying stock information in a
+                clean and structured layout.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Recipe Haven – Recipe Sharing Website</h3>
+            <p>
+                A visually appealing recipe website built using HTML and CSS where users
+                can explore different recipes with attractive layouts and easy navigation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+  <section id="services" class="section light-bg">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card" onclick="highlightService(this)">
+                <h3>Frontend Development</h3>
+                <p>
+                    I create responsive and visually appealing web pages using HTML, CSS, 
+                    and basic JavaScript. The focus is on clean design, proper layout, 
+                    and a user-friendly experience that works on all devices.
+                </p>
+                <a href="frontend.html" class="service-btn" target="_blank">Learn More</a>
+            </div>
+
+            <div class="service-card" onclick="highlightService(this)">
+                <h3>Database Management</h3>
+                <p>
+                    I work with SQL and DBMS to design, manage, and query databases efficiently.
+                    This includes creating tables, managing records, and ensuring data integrity 
+                    for small to medium-scale applications.
+                </p>
+                <a href="database.html" class="service-btn" target="_blank">Learn More</a>
+            </div>
+
+            <div class="service-card" onclick="highlightService(this)">
+                <h3>Java Programming</h3>
+                <p>
+                    I have experience in writing Java programs for problem-solving, 
+                    building basic applications, and implementing object-oriented concepts. 
+                    I can develop functional and structured code for academic projects.
+                </p>
+                <a href="java.html" class="service-btn" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+    <h2>Contact Me</h2>
+    <p class="contact-text">
+ 
+
+    <form id="contactForm" class="contact-form">
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Your Email Address" required>
+        </div>
+
+        <div class="form-group">
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formMessage" class="form-message"></p>
+    </form>
+</section>
+
+
+    <!-- JS file -->
+    <script src="script.js"></script>
+</body>
+</html>

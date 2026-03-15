@@ -1,0 +1,74 @@
+<!--
+Project Title: Interactive Quiz Application
+Name: Ananya Sharma
+Date: 21 January 2026
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+
+        <!-- Introduction -->
+        <header class="quiz-header">
+            <h1>Interactive Quiz</h1>
+            <p>Test your knowledge with this fun and interactive quiz!</p>
+        </header>
+
+        <!-- Quiz Box -->
+        <section id="quiz-box">
+            <h2 id="question">Question Text</h2>
+
+            <div class="options">
+                <label>
+                    <input type="radio" name="option" value="0">
+                    <span id="option0">Option 1</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="option" value="1">
+                    <span id="option1">Option 2</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="option" value="2">
+                    <span id="option2">Option 3</span>
+                </label>
+
+                <label>
+                    <input type="radio" name="option" value="3">
+                    <span id="option3">Option 4</span>
+                </label>
+            </div>
+
+            <button id="next-btn">Next</button>
+        </section>
+
+        <!-- Result Box -->
+        <section id="result-box" class="hidden">
+            <h2>Your Result</h2>
+            <p id="score-text"></p>
+            <p id="message-text"></p>
+
+            <!-- Feedback Form -->
+            <div class="feedback-box">
+                <h3>Give Your Feedback</h3>
+                <textarea id="feedback-text" placeholder="Write your feedback here..." rows="3"></textarea>
+                <button id="submit-feedback-btn">Submit Feedback</button>
+                <p id="feedback-msg" class="hidden"></p>
+            </div>
+
+            <button id="restart-btn">Restart Quiz</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

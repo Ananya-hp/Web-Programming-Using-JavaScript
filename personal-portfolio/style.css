@@ -1,0 +1,262 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+#header {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding-bottom: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 8px 18px;
+    font-size: 14px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.btn:hover {
+    background-color: #e6b800;
+}
+
+/* Common Section Styling */
+.section {
+    padding: 60px 80px;
+    background-color: white;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c5364;
+}
+
+.light-bg {
+    background-color: #f9fafb;
+}
+
+/* About Section */
+#about p {
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+/* Skills Section */
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #eaf2f8;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Projects Section */
+.project-card {
+    background-color: #f9f9f9;
+    border-left: 5px solid #2c5364;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #2c5364;
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    color: #2c5364;
+}
+
+.service-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.service-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.service-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #0f2027;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+.active-service {
+    border: 2px solid #4f46e5;
+    transform: scale(1.03);
+    transition: 0.3s ease;
+}
+.service-card {
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    border: 2px solid #4f46e5;
+}
+
+.active-service {
+    border: 2px solid #4f46e5 !important;
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+    transform: scale(1.03);
+}
+.contact-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.contact-text {
+    max-width: 450px;
+    margin: 0 auto 30px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+
+.contact-form {
+    max-width: 450px;
+    margin: 0 auto;
+    background: #f9fafb;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79,70,229,0.1);
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: 600;
+}

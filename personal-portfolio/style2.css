@@ -1,0 +1,336 @@
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #0b59d0;
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffd700;
+    margin: 0 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background: #ffd700;
+    color: #2c3e50;
+}
+
+/* ===== Layout ===== */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+section, article, aside {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover, article:hover, aside:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ===== Personal Section ===== */
+#personal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+figure {
+    text-align: center;
+}
+
+figure img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #2c3e50;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+address {
+    font-style: normal;
+    background: #f1f5fb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* ===== Lists ===== */
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 6px;
+}
+
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+dd {
+    margin-left: 20px;
+    color: #555;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+thead {
+    background: #2c3e50;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background: #f2f6fc;
+}
+
+tbody tr:hover {
+    background: #dfe9f7;
+}
+
+tfoot {
+    background: #ecf2fb;
+    font-weight: bold;
+}
+
+/* ===== Progress & Meter ===== */
+progress, meter {
+    width: 100%;
+    height: 18px;
+    margin: 5px 0 15px 0;
+}
+
+/* ===== Media Section ===== */
+#media audio, #media video {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+/* ===== Form ===== */
+form {
+    margin-top: 10px;
+}
+
+fieldset {
+    border: 2px solid #2c3e50;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+label {
+    font-weight: 600;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26,115,232,0.2);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: auto;
+    background: linear-gradient(to right, #1a73e8, #4facfe);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* ===== Details & Summary ===== */
+details {
+    background: #f7faff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ===== Aside ===== */
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    margin: 8px 0;
+}
+
+aside a {
+    display: block;
+    background: #f1f5fb;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+aside a:hover {
+    background: #dfe9f7;
+}
+
+/* ===== Blockquote & Cite ===== */
+blockquote {
+    border-left: 5px solid #1a73e8;
+    padding-left: 15px;
+    margin-left: 0;
+    color: #555;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer small {
+    color: #ddd;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    #personal {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px 5px;
+    }
+}

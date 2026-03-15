@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Task</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Add New Task</h2>
+
+        <form method="POST" action="/add_task">
+            <input type="text" name="title" placeholder="Task Title" required>
+            <textarea name="description" placeholder="Task Description" rows="4" required></textarea>
+
+            <label>Due Date</label>
+            <input type="date" name="due_date" required>
+
+            <label>Priority</label>
+            <select name="priority" required>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+            <input type="number" name="expected_time" placeholder="Expected Time (hours)" required>
+
+            <button type="submit">Add Task</button>
+            <a href="/dashboard" class="btn">Back</a>
+        </form>
+    </div>
+</body>
+</html>

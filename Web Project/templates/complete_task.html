@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Task</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Complete Task</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            <p><strong>Task:</strong> {{ task['title'] }}</p>
+
+            <input type="number" name="actual_time" placeholder="Actual Time Taken (hours)" required>
+            <textarea name="reflection" placeholder="What did you learn?" rows="3" required></textarea>
+            <textarea name="distraction" placeholder="Any distractions?" rows="2" required></textarea>
+            <textarea name="difficulty" placeholder="Difficulty faced?" rows="2" required></textarea>
+
+            <label>Rating (1–5)</label>
+            <select name="rating" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <label>Attachment (optional)</label>
+            <input type="file" name="attachment">
+
+            <button type="submit">Mark as Completed</button>
+            <a href="/dashboard" class="btn">Back</a>
+        </form>
+    </div>
+</body>
+</html>
