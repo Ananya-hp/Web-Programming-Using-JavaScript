@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>All Blog Posts</h2>
+
+{% for post in posts %}
+<div class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+
+    <div class="actions">
+        <a class="edit" href="/edit/{{ loop.index0 }}">Edit</a>
+        <a class="delete" href="/delete/{{ loop.index0 }}">Delete</a>
+    </div>
+</div>
+
+{% else %}
+<p class="empty">No posts available. Create one!</p>
+{% endfor %}
+
+{% endblock %}
