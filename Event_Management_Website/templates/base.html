@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Management</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>🎉 Event Portal</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/events">Events</a>
+        <a href="/register">Register</a>
+        <a href="/login">Admin</a>
+    </div>
+</nav>
+
+{% with messages = get_flashed_messages() %}
+{% for msg in messages %}
+<p class="flash">{{ msg }}</p>
+{% endfor %}
+{% endwith %}
+
+<div class="container">
+{% block content %}{% endblock %}
+</div>
+
+<footer>
+<p>© 2026 Event Management Website</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Edit Event</h2>
+
+<form method="POST">
+
+<input name="name" value="{{ event.name }}" placeholder="Event Name" required>
+
+<input type="date" name="date" value="{{ event.date }}" required>
+
+<input name="venue" value="{{ event.venue }}" placeholder="Venue" required>
+
+<input name="description" value="{{ event.description }}" placeholder="Description" required>
+
+<input name="image" value="{{ event.image }}" placeholder="Image URL" required>
+
+<button type="submit">Update Event</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🎟️ Available Events</h2>
+
+<input type="text" id="search" onkeyup="searchEvent()" placeholder="Search events...">
+
+<section class="event-container">
+
+{% for e in events %}
+<article class="card">
+
+<figure>
+<img src="{{ e.image }}" alt="event">
+</figure>
+
+<h3>{{ e.name }}</h3>
+<p>Date: {{ e.date }}</p>
+<p>Venue: {{ e.venue }}</p>
+<p>{{ e.description }}</p>
+
+<p>RSVP: {{ rsvp.get(e.id,0) }}</p>
+
+<a href="/rsvp/{{e.id}}" class="button">RSVP</a>
+<a href="/register" class="button">Register</a>
+
+</article>
+{% endfor %}
+
+</section>
+
+<script src="/static/script.js"></script>
+
+{% endblock %}
