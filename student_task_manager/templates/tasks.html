@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Tasks - Study Sync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Study Sync</h2>
+        <a href="/dashboard">Dashboard</a>
+    </div>
+
+    <h1>All Tasks</h1>
+
+    <!-- ✅ IMPROVED SEARCH + FILTER -->
+    <form method="GET" action="/tasks" class="filter-bar">
+        
+        <input type="text" name="search" placeholder="🔍 Search tasks...">
+
+        <select name="status">
+            <option value="">Status</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <select name="priority">
+            <option value="">Priority</option>
+            <option value="High">🔴 High</option>
+            <option value="Medium">🟠 Medium</option>
+            <option value="Low">🟢 Low</option>
+        </select>
+
+        <button type="submit">Apply</button>
+    </form>
+
+    <!-- Table Box -->
+    <div class="table-box">
+
+        {% if tasks %}
+
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Subject</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>File</th>
+                <th>Action</th>
+            </tr>
+
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task['title'] }}</td>
+
+                <td>{{ task['subject'] if task['subject'] else 'General' }}</td>
+
+                <td>{{ task['due_date'] }}</td>
+
+                <!-- Priority -->
+                <td>
+                    {% if task['priority']=="High" %}
+                        <span style="color:red;">High</span>
+                    {% elif task['priority']=="Medium" %}
+                        <span style="color:orange;">Medium</span>
+                    {% else %}
+                        <span style="color:green;">Low</span>
+                    {% endif %}
+                </td>
+
+                <!-- Status -->
+                <td>
+                    {% if task['status']=="Completed" %}
+                        <span style="color:green;">Completed</span>
+                    {% else %}
+                        <span style="color:orange;">Pending</span>
+                    {% endif %}
+                </td>
+
+                <!-- File -->
+                <td>
+                    {% if task['attachment'] %}
+                        <a href="{{ url_for('static', filename='uploads/' + task['attachment']) }}" target="_blank">
+                            View
+                        </a>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+
+                <!-- Actions -->
+                <td>
+                    {% if task['status']=="Pending" %}
+                        <a href="/complete_task/{{ task['id'] }}">Complete</a> |
+                        <a href="/edit_task/{{ task['id'] }}">Edit</a> |
+                    {% endif %}
+                    <a href="/delete_task/{{ task['id'] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% else %}
+            <p style="text-align:center;">No tasks available</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
