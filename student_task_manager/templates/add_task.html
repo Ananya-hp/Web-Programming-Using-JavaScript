@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task - Study Sync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="center">
+    <div class="card">
+        <h2>Add New Task</h2>
+
+        <form method="POST">
+
+            <!-- Title -->
+            <input type="text" name="title" placeholder="Task Title" required>
+
+            <!-- Description -->
+            <input type="text" name="description" placeholder="Description">
+
+            <!-- Subject (IMPORTANT FIX 🔥) -->
+            <select name="subject" required>
+                <option value="">Select Subject</option>
+                <option value="Data Structures">Data Structures</option>
+                <option value="DBMS">DBMS</option>
+                <option value="Operating Systems">Operating Systems</option>
+                <option value="Computer Networks">Computer Networks</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="AI/ML">AI / ML</option>
+            </select>
+
+            <!-- Due Date -->
+            <input type="date" name="due_date" required>
+
+            <!-- Priority -->
+            <select name="priority">
+                <option value="High">High Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="Low">Low Priority</option>
+            </select>
+
+            <!-- Expected Time -->
+            <input type="number" name="expected_time" placeholder="Expected Time (hours)">
+
+            <!-- Submit -->
+            <button type="submit">Add Task</button>
+
+        </form>
+
+        <br>
+        <a href="/dashboard">⬅ Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>
