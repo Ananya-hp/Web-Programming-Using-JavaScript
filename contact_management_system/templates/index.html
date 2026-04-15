@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3 class="center">Your Contacts</h3>
+
+<form method="GET">
+    <div class="search-box">
+        <input type="text" name="search" placeholder="Search by name or phone" value="{{ query if query else '' }}">
+        <button class="btn" type="submit">Search</button>
+    </div>
+</form>
+
+<br>
+
+<table>
+<tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Actions</th>
+</tr>
+
+{% for contact in contacts %}
+<tr>
+    <td>{{ contact.name }}</td>
+    <td>{{ contact.phone }}</td>
+    <td>{{ contact.email }}</td>
+    <td>
+        <a href="/edit/{{ loop.index0 }}" class="btn">Edit</a>
+        <a href="/delete/{{ loop.index0 }}" class="btn">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+{% if contacts|length == 0 %}
+    <p class="center">No contacts found 😕</p>
+{% endif %}
+
+{% endblock %}
