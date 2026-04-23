@@ -1,0 +1,39 @@
+body {
+    font-family: Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background: white;
+    color: black;
+    padding: 25px;
+    margin: 50px auto;
+    width: 50%;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #5a67d8;
+}
+
+.question-box {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.option {
+    display: block;
+    margin: 5px 0;
+}
