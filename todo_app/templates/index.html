@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="input-panel">
+    <input type="text" id="task-title" placeholder="Enter task title">
+    <textarea id="task-desc" placeholder="Enter task description (optional)"></textarea>
+    
+    <select id="task-priority">
+        <option value="low">Low</option>
+        <option value="medium" selected>Medium</option>
+        <option value="high">High</option>
+    </select>
+
+    <div class="button-group">
+        <button id="add-task-btn">Add Task</button>
+        <button id="clear-all-btn" class="clear-btn">Clear All</button>
+    </div>
+
+    <p id="error-message" class="error-message"></p>
+</section>
+
+<section class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Tasks</button>
+    <button class="filter-btn" data-filter="active">Active</button>
+    <button class="filter-btn" data-filter="completed">Completed</button>
+</section>
+
+<section class="task-counter">
+    <span class="badge total-badge">Total: <span id="total-count">0</span></span>
+    <span class="badge active-badge">Active: <span id="active-count">0</span></span>
+    <span class="badge completed-badge">Completed: <span id="completed-count">0</span></span>
+</section>
+
+<section id="task-list" class="task-list">
+    <p class="empty-state">No tasks yet! Add your first task above.</p>
+</section>
+{% endblock %}

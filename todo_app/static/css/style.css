@@ -1,0 +1,225 @@
+/* Student Name:
+   Roll No:
+   Assignment 4 - Flask Powered Dynamic To-Do List Application
+   Date:
+*/
+
+/* === SECTION 1: Global Reset & Variables === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --warning-color: #f59e0b;
+    --light-bg: #f8fafc;
+    --dark-text: #1e293b;
+    --radius: 12px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* === SECTION 2: Layout & Base === */
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-text);
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* === SECTION 3: Input Panel === */
+.input-panel {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-panel input,
+.input-panel textarea,
+.input-panel select {
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+#add-task-btn, .clear-btn {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+#add-task-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.clear-btn {
+    background: var(--danger-color);
+    color: white;
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.9rem;
+}
+
+/* === SECTION 4: Filter Bar === */
+.filter-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.filter-btn {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* === SECTION 5: Task Counter === */
+.task-counter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    color: white;
+}
+
+.total-badge { background: var(--primary-color); }
+.active-badge { background: var(--warning-color); }
+.completed-badge { background: var(--success-color); }
+
+/* === SECTION 6: Task Cards === */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-card {
+    background: white;
+    border-left: 6px solid;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.priority-high { border-color: var(--danger-color); }
+.priority-medium { border-color: var(--warning-color); }
+.priority-low { border-color: var(--success-color); }
+
+.task-card.completed {
+    opacity: 0.7;
+}
+
+.task-card.completed h3 {
+    text-decoration: line-through;
+}
+
+.task-top {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.priority-badge {
+    text-transform: capitalize;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.task-actions button {
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* === SECTION 7: Edit Mode === */
+.edit-mode {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.edit-mode input,
+.edit-mode textarea,
+.edit-mode select {
+    padding: 0.7rem;
+    border-radius: var(--radius);
+    border: 1px solid #cbd5e1;
+}
+
+/* === SECTION 8: Animations === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === SECTION 9: Responsive === */
+@media (max-width: 600px) {
+    .button-group,
+    .filter-bar,
+    .task-counter,
+    .task-top {
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
